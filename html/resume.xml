@@ -67,7 +67,7 @@ do some student's job
 	</career>
 	
 	<projects>
-		<project name="bezier-curve" langs="C++ (VCL, Builder)" technologies="OOP" sources="https://github.com/sea-kg/bezier-curve" video="http://www.youtube.com/watch?v=lpA09a3ZG3E">
+		<project name="bezier-curve" langs="C++ (VCL, Builder)" technologies="OOP" sources="https://github.com/sea5kg/bezier-curve" video="http://www.youtube.com/watch?v=lpA09a3ZG3E">
 Calculate and draw bezier curve.
 
 Расчет и построение кривой Безье.
@@ -75,7 +75,7 @@ Calculate and draw bezier curve.
 Программа позволяет выставлять точки относительно которых и строиться кривая Безье.
 Аналогов программы множество.
 		</project>
-		<project name="BottleFS" langs="ava, bash, gradle, deb" technologies="Java, Http-server, lucene, tika, JSON" sources="https://github.com/sea-kg/BottleFS" video="http://www.youtube.com/watch?v=wNFbQL8h5GI">
+		<project name="BottleFS" langs="ava, bash, gradle, deb" technologies="Java, Http-server, lucene, tika, JSON" sources="https://github.com/sea5kg/BottleFS" video="http://www.youtube.com/watch?v=wNFbQL8h5GI">
 backend for file-storage (downloading by url)
 
 deb can you got from here: https://sea5kg.ru/files/debs/bottlefs/
@@ -136,7 +136,7 @@ jury должно было обслуживать 12 сервисов:
 	- безопастный запуск подпрограмм написанных на bash или python
 	- мультипоточная работа с базой данных (Qt + MySQL)
 		</project>
-		<project name="marstalk" langs="Python, Brainfuck" technologies="Sockets, Network" sources="https://github.com/sea-kg/2014-service-marstalk" video="">
+		<project name="marstalk" langs="Python, Brainfuck" technologies="Sockets, Network" sources="https://github.com/sea5kg/2014-service-marstalk" video="">
 Network service for sibirctf2014
 
 Для sibirctf2014 был разработан сервис на python.
@@ -152,13 +152,13 @@ For fast up game
 Скрипты для разворачивания микросервисной архитектуры на базе Docker'a.
 Написание простых Dockerfile. Организация хранения сервисов.
 		</project>
-		
-		<project name="dbf2csv" langs="bash" technologies="DBF, CSV, converting" sources="https://github.com/sea-kg/dbf2csv" video="">
+
+		<project name="dbf2csv" langs="bash" technologies="DBF, CSV, converting" sources="https://github.com/sea5kg/dbf2csv" video="">
 convert dbf2csv for kladr
 Скрипт для конвертации базы kladr в csv формат под linux.
 		</project>
 
-		<project name="stego-packer" langs="C++ Qt" technologies="Qt, PNG" sources="https://github.com/sea-kg/stego-packer" video="">
+		<project name="stego-packer" langs="C++ Qt" technologies="Qt, PNG" sources="https://github.com/sea5kg/stego-packer" video="">
 Write information into picture (png)
 
 Программа которая может записать (и прочитать) сообщение в картинку.
@@ -166,23 +166,23 @@ Write information into picture (png)
 Отнсоиться к разделу стеганографии (сокрытии сообщения в самом сообщении).
 		</project>
 
-		<project name="The-Dragon-curve" langs="C++ Builder 6" technologies="Canvas" sources="https://github.com/sea-kg/The-Dragon-curve" video="http://www.youtube.com/watch?v=7ozo-3s7g2I">
+		<project name="The-Dragon-curve" langs="C++ Builder 6" technologies="Canvas" sources="https://github.com/sea5kg/The-Dragon-curve" video="http://www.youtube.com/watch?v=7ozo-3s7g2I">
 Drawing The Dragon curve
 
 Построение кривых дракона.
 		</project>
-		<project name="SolvingSudoku" langs="C++ Qt" technologies="Qt" sources="https://github.com/sea-kg/SolvingSudoku" video="">
+		<project name="SolvingSudoku" langs="C++ Qt" technologies="Qt" sources="https://github.com/sea5kg/SolvingSudoku" video="">
 Program for solve sudoku (any size)
 
 Программа для решения судоку любого размера. Алгоритм был разработан самостоятельно.
 		</project>
-		<project name="SplitRussianWords" langs="С++ Qt" technologies="Qt" sources="https://github.com/sea-kg/SplitRussianWords" video="">
+		<project name="SplitRussianWords" langs="С++ Qt" technologies="Qt" sources="https://github.com/sea5kg/SplitRussianWords" video="">
 Split the Russian words into syllables
 
 Программа для разбора русского слова на слоги. Используется аналитический алгоритм который имеет погрешность.
 		</project>
 
-		<project name="OX (Tic-tac-toe)" langs="PHP, SQL, CSS, JavaScript" technologies="MySQL" sources="https://github.com/sea-kg/0X" video="">
+		<project name="OX (Tic-tac-toe)" langs="PHP, SQL, CSS, JavaScript" technologies="MySQL" sources="https://github.com/sea5kg/0X" video="">
 Tic-tac-toe
 
 Серверная имплементация извесной игры "Крестики нолики". Есть возможность проведения сразу нескольких игр.
@@ -203,7 +203,7 @@ Helper tool for convert a lot of data
 Программа показала неплохие возможности и на текущий момент она используется внутри компании для обслуживания клиентов
 		</project>
 
-		<project name="seakg-hack-xor" langs="C++ Qt" technologies="Qt" sources="https://github.com/sea-kg/seakg-hack-xor" video="">
+		<project name="seakg-hack-xor" langs="C++ Qt" technologies="Qt" sources="https://github.com/sea5kg/seakg-hack-xor" video="">
 Decrypt encrypted text by xor (you must know length key)
 
 Программа для расшифрования текстовых данных зашифрованных с помощью XOR.
@@ -211,15 +211,7 @@ Decrypt encrypted text by xor (you must know length key)
 Программа использует статистический анализ, там самым находя наиболее вероятный ключ.
 		</project>
 
-		<project name="free-TMX-PHPEditor" langs="PHP, JavaScript" technologies="Ajax" sources="https://github.com/sea-kg/free-TMX-PHPEditor" video="">
-*.tmx editor based on PHP (for group translated applications)
-
-Сайт для работы с tmx файлами (без авторизации).
-tmx файлы хранят переводы для приложения.
-Сайт позволяет совместными усилиями организовать групповой перевод приложения внутри компании.
-		</project>
-
-		<project name="phpsimplechat" langs="PHP, JavaScript" technologies="Ajax" sources="https://github.com/sea-kg/phpsimplechat" video="">
+		<project name="phpsimplechat" langs="PHP, JavaScript" technologies="Ajax" sources="https://github.com/sea5kg/phpsimplechat" video="">
 simple chat on PHP
 
 Простой чат на php.
