@@ -211,24 +211,139 @@
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Настройка гита. Настройка и генерация персонального ключа.</h2>
-              <p>Сгенерируем ключ (ДОПИСАТЬ)</p>
-              <p>в ~/.ssh/config можем прописать какой ключ и для какого сервера надо использовать (удобно для разделения рабочих ключей и личного).</p>
+              <h2>Настройка гита. Генерация персонального ключа.</h2>
+              <p>Сгенерируем ключ (при геннерации указываем путь до ключв ~/.ssh/test и пассфразу оставляем пустую):</p>
               <pre>
-Host github.com
-  IdentityFile ~/.ssh/key1
-
-Host bitbucket.org
-  IdentityFile ~/.ssh/key2
-              </pre>
-              <p>~/.ssh/key1 - будет использоваться для работы с github.com</p>
-              <p>~/.ssh/key2 - будет использоваться для работы с bitbucket.org</p>
-              <p>Кроме IdentityFile можно всякого там настроить напрмиер User а остальное лучше погуглить</p>
-              <p>Также в этом файле можно настраивать ключи для доступа к сервера по ssh (чтобы также можно было использовать разные ключи к разным серверам)</p>
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/test
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/seakg/.ssh/test
+Your public key has been saved in /home/seakg/.ssh/test.pub
+The key fingerprint is:
+SHA256:tMSgiRfuDgtU3AOMxZ2zlDmVlTAyHzJy9wCmLUgtCeI your_email@example.com
+The key's randomart image is:
++---[RSA 4096]----+
+....
++----[SHA256]-----+
+</pre>
+              <p>Статья от github: <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">connecting-to-github-with-ssh</a></p>
+              <p>Публичный ключ test.pub - содержимое его как раз и закидываем в github / gitlab / bitbucket / gitverse и так далее</p>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>Настройка гита. Настройка ключа</h2>
+              <p>в ~/.ssh/config можем прописать какой ключ и для какого сервера надо использовать (удобно для разделения рабочих ключей и личного а также для работы с разными серверами).</p>
+              <pre>
+Host github.com
+  User git
+  IdentityFile ~/.ssh/test
+
+Host 192.168.1.1
+  User git
+  Port 8022
+  IdentityFile ~/.ssh/test
+
+Host bitbucket.org
+  User git
+  IdentityFile ~/.ssh/test2
+              </pre>
+              <p>~/.ssh/test - будет использоваться для работы с github.com</p>
+              <p>~/.ssh/test2 - будет использоваться для работы с bitbucket.org</p>
+              <p>Кроме IdentityFile можно всякого там настроить напрмиер User а остальное лучше погуглить</p>
+              <p>Также в этом файле можно настраивать ключи для доступа к сервера по ssh (чтобы также можно было использовать разные ключи к разным серверам)</p>
+              <p>Переодически возникает проблема с правами до конфига и до ключей, потому выставляем такие вот права:</p>
+              <pre>
+$ chmod 700 ~/.ssh
+$ chmod 600 ~/.ssh/*
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>Общий принцип работы гита</h2>
+              <p>Картинку</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>Просмотр изменений и текущих изменений</h2>
+              <p><pre>$ git status</pre> - показывает изменные файлы и файлы добавленные для коммита</p>
+              <p><pre>$ git branch -a -v</pre> - показывает все ветки</p>
+              <p><pre>$ git log</pre> - показывает историю изменений на текущей ветки</p>
+              <p><pre>$ git log --oneline</pre> - тоже что и git log но только в однострочном формате</p>
+              <p><pre>$ git log --oneline --graph</pre> - тоже что и git log но только в однострочном формате и в виде графа</p>
+              <p><pre>$ git log --oneline --graph --all</pre> - показывает историю изменений в однострочном формате, в виде графа для всех веток</p>
+              <p><pre>$ git diff-tree --no-commit-id --name-only -r 61ea1ed552f06612c2cbeec48c85c23fbf9495c4</pre> - показывает измененые файлы из коммита</p>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>Получение изменений pull / fetch</h2>
+              <p><pre>$ git pull</pre> - Забирает изменение из внешнего репозитория и пытается применить их на текущей выбранной ветке</p>
+              <p><pre>$ git pull -p</pre> - делвет тоже что и pull + удаляет те ветки которые были удалены во внешнем репозитории</p>
+              <p><pre>$ git fetch</pre> - получает все изменения из внешнего репозитория но не применяет их</p>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>Крутотеньки. Rebase</h2>
+              <p>удобно для персональных веток (!!!) или еще не закомиченных изменений или приведение в порядок ветки</p>
+              <p><pre>$ git rebase origin/master</pre> - пересоздает текущую ветку от origin/master (создает новую ветку и копирует все коммиты с текущей в новую)</p>
+              <p><pre>$ git rebase -i HEAD~5</pre> - можем поменять порядок коммитов или засквошить (то есть обьеденить коммиты)</p>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>Крутотеньки. Fixup коммиты</h2>
+              <p>удобно для персональных веток (!!!) или еще не закомиченных изменений</p>
+              <pre>
+$ git add some_file
+$ git commit --fixup=7da9c4f09995bb0f02bd77e125fd5d50c5039a1b
+$ git rebase -i --autosquash 7da9c4f09995bb0f02bd77e125fd5d50c5039a1b~1
+# git push -f
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
 
     </div>
   </body>
