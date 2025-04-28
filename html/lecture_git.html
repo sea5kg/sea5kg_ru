@@ -273,6 +273,7 @@ $ chmod 600 ~/.ssh/*
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
               <h2>Общий принцип работы гита</h2>
+              <img src="img/lectures/git/basic.png">
               <p>Картинку</p>
             </div>
           </div>
@@ -285,14 +286,34 @@ $ chmod 600 ~/.ssh/*
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
               <h2>Просмотр изменений и текущих изменений</h2>
-              <p><pre>$ git status</pre> - показывает изменные файлы и файлы добавленные для коммита</p>
-              <p><pre>$ git branch -a -v</pre> - показывает все ветки</p>
-              <p><pre>$ git log</pre> - показывает историю изменений на текущей ветки</p>
-              <p><pre>$ git log --oneline</pre> - тоже что и git log но только в однострочном формате</p>
-              <p><pre>$ git log --oneline --graph</pre> - тоже что и git log но только в однострочном формате и в виде графа</p>
-              <p><pre>$ git log --oneline --graph --all</pre> - показывает историю изменений в однострочном формате, в виде графа для всех веток</p>
-              <p><pre>$ git diff-tree --no-commit-id --name-only -r 61ea1ed552f06612c2cbeec48c85c23fbf9495c4</pre> - показывает измененые файлы из коммита</p>
-              </pre>
+              <p>Показывает изменные файлы и файлы добавленные для коммита:</p>
+              <pre>$ git status</pre>
+              <hr/>
+
+              <p>Показывает все ветки</p>
+              <pre>$ git branch -a -v</pre>
+              <hr/>
+
+              <p>показывает историю изменений на текущей ветки</p>
+              <pre>$ git log</pre>
+              <hr/>
+
+              <p>Тоже что и git log но только в однострочном формате</p>
+              <pre>$ git log --oneline</pre>
+              <hr/>
+
+              <p>Тоже что и git log но только в однострочном формате и в виде графа</p>
+              <pre>$ git log --oneline --graph</pre>
+              <hr/>
+
+              <p>Показывает историю изменений в однострочном формате, в виде графа для всех веток</p>
+              <pre>$ git log --oneline --graph --all</pre>
+              <hr/>
+
+              <p>Показывает изменёные файлы из коммита</p>
+              <pre>$ git diff-tree --no-commit-id --name-only -r 61ea1ed552f06612c2cbeec48c85c23fbf9495c4</pre>
+              <hr/>
+
             </div>
           </div>
         </div>
