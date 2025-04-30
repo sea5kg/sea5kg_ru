@@ -152,7 +152,14 @@
               <h2>План</h2>
               <ul>
                 <li>Кратко о git. что это такое...</li>
-                <li>Настройка гита</li>
+                <li>Настройка гита. Установка. Авторизация.</li>
+                <li>Настройка гита. Генерация персонального ключа.</li>
+                <li>Настройка гита. Настройка ключа.</li>
+                <li>Общий принцип работы гита.</li>
+                <li>Просмотр изменений и текущих изменений.</li>
+                <li>Получение изменений pull / fetch.</li>
+                <li>Крутотеньки. Rebase.</li>
+                <li>Крутотеньки. Fixup коммиты.</li>
               </ul>
             </div>
           </div>
@@ -238,7 +245,7 @@ The key's randomart image is:
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Настройка гита. Настройка ключа</h2>
+              <h2>Настройка гита. Настройка ключа.</h2>
               <p>в ~/.ssh/config можем прописать какой ключ и для какого сервера надо использовать (удобно для разделения рабочих ключей и личного а также для работы с разными серверами).</p>
               <pre>
 Host github.com
@@ -272,7 +279,7 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Общий принцип работы гита</h2>
+              <h2>Общий принцип работы гита.</h2>
               <img src="img/lectures/git/basic.png">
               <p>Картинку</p>
             </div>
@@ -285,7 +292,7 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Просмотр изменений и текущих изменений</h2>
+              <h2>Просмотр изменений и текущих изменений.</h2>
               <p>Показывает изменные файлы и файлы добавленные для коммита:</p>
               <pre>$ git status</pre>
               <hr/>
@@ -323,10 +330,18 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Получение изменений pull / fetch</h2>
-              <p><pre>$ git pull</pre> - Забирает изменение из внешнего репозитория и пытается применить их на текущей выбранной ветке</p>
-              <p><pre>$ git pull -p</pre> - делвет тоже что и pull + удаляет те ветки которые были удалены во внешнем репозитории</p>
-              <p><pre>$ git fetch</pre> - получает все изменения из внешнего репозитория но не применяет их</p>
+              <h2>Получение изменений pull / fetch.</h2>
+              <p>Забирает изменение из внешнего репозитория и пытается применить их на текущей ветке (если таковые есть):</p>
+              <pre>$ git pull</pre>
+              <hr/>
+
+              <p>Делает тоже что и pull + удаляет те ветки которые были удалены во внешнем репозитории (только в origin):</p>
+              <pre>$ git pull -p</pre>
+              <hr/>
+
+              <p>Получает все изменения из внешнего репозитория но не применяет их:</p>
+              <pre>$ git fetch</pre>
+              <hr/>
               </pre>
             </div>
           </div>
@@ -337,11 +352,14 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Крутотеньки. Rebase</h2>
-              <p>удобно для персональных веток (!!!) или еще не закомиченных изменений или приведение в порядок ветки</p>
-              <p><pre>$ git rebase origin/master</pre> - пересоздает текущую ветку от origin/master (создает новую ветку и копирует все коммиты с текущей в новую)</p>
-              <p><pre>$ git rebase -i HEAD~5</pre> - можем поменять порядок коммитов или засквошить (то есть обьеденить коммиты)</p>
-              </pre>
+              <h2>Крутотеньки. Rebase.</h2>
+              <p>Удобно для персональных веток (!!!) или еще не закомиченных изменений или приведение в порядок ветки:</p>
+              <pre>$ git rebase origin/master</pre>
+              <hr/>
+
+              <p>Можем поменять порядок коммитов или засквошить (то есть обьеденить коммиты):</p>
+              <pre>$ git rebase -i HEAD~5</pre>
+              <hr/>
             </div>
           </div>
         </div>
@@ -351,8 +369,8 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Крутотеньки. Fixup коммиты</h2>
-              <p>удобно для персональных веток (!!!) или еще не закомиченных изменений</p>
+              <h2>Крутотеньки. Fixup коммиты.</h2>
+              <p>Удобно для персональных веток (!!!) или еще не запушенных коммитов:</p>
               <pre>
 $ git add some_file
 $ git commit --fixup=7da9c4f09995bb0f02bd77e125fd5d50c5039a1b
