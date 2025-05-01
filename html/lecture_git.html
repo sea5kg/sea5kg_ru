@@ -382,7 +382,37 @@ $ git rebase -i --autosquash 7da9c4f09995bb0f02bd77e125fd5d50c5039a1b~1
         </div>
       </div>
 
-      
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>Свой git-сервер. Gogs.</h2>
+              <p>Вот и пришло время делать свой гит/джит-сервер: <a target="_blank" href="https://github.com/gogs/">https://github.com/gogs/</a></p>
+              <p>Создаем docker-compose.yml:</p>
+              <pre>
+services:
+  my_gogs:
+    image: gogs/gogs:0.13
+    ports:
+      # - 10022:22
+      - 10880:3000
+    volumes:
+      - ./gogs:/data
+    restart: always
+    networks:
+      - gogs_net
+
+networks:
+  gogs_net:
+    driver: bridge
+              </pre>
+              <p>Запускаем командой 'docker compose up'</p>
+              <p>Открываем на порту 10880 - Делаем найстройки первый раз</p>
+              <p>Готово можно пользоваться через http</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </body>
