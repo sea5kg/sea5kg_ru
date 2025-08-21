@@ -416,6 +416,42 @@ networks:
         </div>
       </div>
 
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>Свой git-сервер. Forgejo.</h2>
+              <p>Вот тут оффициальный ман для установки и настройки: https://forgejo.org/docs/latest/admin/installation/docker/</p>
+              <p>Платформа Forgejo является форком проекта Gitea, который в свою очередь ответвился от платформы Gogs. Ключевыми особенностями Forgejo является низкое потребление ресурсов (может использоваться в дешёвых VPS) и простой процесс установки. Предоставляются типовые возможности работы с проектами, такие как управление задачами, отслеживание проблем (issues), pull-запросы, wiki, средства для координации групп разработчиков, подготовка релизов, автоматизация размещения пакетов в репозиториях.</p>
+              <p>Создаем docker-compose.yml (взято с офф примера):</p>
+              <pre>
+networks:
+  forgejo:
+    external: false
+
+services:
+  server:
+    image: codeberg.org/forgejo/forgejo:11
+    container_name: forgejo
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    networks:
+      - forgejo
+    volumes:
+      - ./forgejo:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - '3000:3000'
+      - '222:22'
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </body>
   </script>
