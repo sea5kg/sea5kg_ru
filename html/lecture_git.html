@@ -168,8 +168,9 @@
                 <li><a href="?p=slide11">Слайд 11</a>: Стеш. Временное хранилище изменений..</li>
                 <li><a href="?p=slide12">Слайд 12</a>: Крутотеньки. Rebase.</li>
                 <li><a href="?p=slide13">Слайд 13</a>: Крутотеньки. Fixup коммиты.</li>
-                <li><a href="?p=slide14">Слайд 14</a>: Свой git-сервер. Gogs.</li>
-                <li><a href="?p=slide15">Слайд 15</a>: Свой git-сервер. Forgejo.</li>
+                <li><a href="?p=slide14">Слайд 14</a>: Крутотеньки. Bisect.</li>
+                <li><a href="?p=slide15">Слайд 15</a>: Свой git-сервер. Gogs.</li>
+                <li><a href="?p=slide16">Слайд 16</a>: Свой git-сервер. Forgejo.</li>
               </ul>
             </div>
           </div>
@@ -180,7 +181,7 @@
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Кратко о git. что это такое...</h2>
+              <h2>2. Кратко о git. что это такое...</h2>
               <h3>Это децентрализованная система контроля версий</h3>
               <p>1. Контроль версий представляется так что в каждом ТЕКСТОВОМ файле мы можем посмотреть кто и что менял и когда.</p>
               <p>2. Все именения выглядят как patch, то есть в каком файле в после каких строк надо добавить новые строки</p>
@@ -197,7 +198,7 @@
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Настройка гита. Установка.</h2>
+              <h2>3. Настройка гита. Установка.</h2>
               <p>Вначале надо установить на систему git.</p>
               <p>Под linux на базе дебиан (ubuntu): apt install git</p>
               <p>Под windows: скачать с оффициального сайта</p>
@@ -211,7 +212,7 @@
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Настройка гита. Авторизация.</h2>
+              <h2>4. Настройка гита. Авторизация.</h2>
               <p>Есть два типа авторизации в гите (мне известно только о них):</p>
               <ul>
                 <li>Через basic auth то есть типа <pre>git clone http://user:pass@site.com/repos/repo1 repo1_via_basicauth.git</pre></li>
@@ -228,7 +229,7 @@
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Настройка гита. Генерация персонального ключа.</h2>
+              <h2>5. Настройка гита. Генерация персонального ключа.</h2>
               <p>Сгенерируем ключ (при геннерации указываем путь до ключв ~/.ssh/test и пассфразу оставляем пустую):</p>
               <pre>
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/test
@@ -255,7 +256,7 @@ The key's randomart image is:
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Настройка гита. Настройка ключа.</h2>
+              <h2>6. Настройка гита. Настройка ключа.</h2>
               <p>в ~/.ssh/config можем прописать какой ключ и для какого сервера надо использовать (удобно для разделения рабочих ключей и личного а также для работы с разными серверами).</p>
               <pre>
 Host github.com
@@ -289,9 +290,8 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Общий принцип работы гита.</h2>
+              <h2>7. Общий принцип работы гита.</h2>
               <img src="img/lectures/git/basic.png">
-              <p>Картинку</p>
             </div>
           </div>
         </div>
@@ -302,7 +302,7 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Просмотр изменений и текущих изменений.</h2>
+              <h2>8. Просмотр изменений и текущих изменений.</h2>
               <p>Показывает изменные файлы и файлы добавленные для коммита:</p>
               <pre>$ git status</pre>
               <hr/>
@@ -340,7 +340,7 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Получение изменений pull / fetch.</h2>
+              <h2>9. Получение изменений pull / fetch.</h2>
               <p>Забирает изменение из внешнего репозитория и пытается применить их на текущей ветке (если таковые есть):</p>
               <pre>$ git pull</pre>
               <hr/>
@@ -365,7 +365,7 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Коммиты. Закрепление изменений</h2>
+              <h2>10. Коммиты. Закрепление изменений</h2>
               <p>В гите для изменений у файлов есть пару состояний. А именно это состояния "изменен файл" и "изменений попадут в коммит" </p>
               <p>Чтобы добавить файл целиком к будущему коммиту:</p>
               <pre>$ git add here_file_path_or_dir</pre>
@@ -392,7 +392,7 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Стеш. Временное хранилище изменений.</h2>
+              <h2>11. Стеш. Временное хранилище изменений.</h2>
               <p>Если вы делаете rebase или просто надо сохранить временно изменения или перенести на другую ветку.</p>
               <p>Посмотреть список сохраненых изменений</p>
               <pre>$ git stash list</pre>
@@ -415,7 +415,7 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Крутотеньки. Rebase.</h2>
+              <h2>12. Крутотеньки. Rebase.</h2>
               <p>Удобно для персональных веток (!!!) или еще не закомиченных изменений или приведение в порядок ветки:</p>
               <pre>$ git rebase origin/master</pre>
               <hr/>
@@ -432,7 +432,7 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Крутотеньки. Fixup коммиты.</h2>
+              <h2>13. Крутотеньки. Fixup коммиты.</h2>
               <p>Удобно для персональных веток (!!!) или еще не запушенных коммитов:</p>
               <pre>
 $ git add some_file
@@ -449,7 +449,41 @@ $ git rebase -i --autosquash 7da9c4f09995bb0f02bd77e125fd5d50c5039a1b~1
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Свой git-сервер. Gogs.</h2>
+              <h2>14. Крутотеньки. Bisect.</h2>
+              <p>Операция: найти коммит в котром есть баг в N последних коммитах</p>
+
+              <p>Чтобы не просматривать все коммиты вручную, можно использовать команду git bisect (https://git-scm.com/docs/git-bisect). Она позволяет автоматически найти коммит, где появилась ошибка, с помощью бинарного поиска</p>
+
+              <p>Начинаем поиск</p>
+              <pre>$ git bisect start</pre>
+
+              <p>Указываем диапазон поиска. коммит, где ошибки точно не было:</p>
+              <pre>$ git bisect good caa98b9a421acff8fe8aafeb8b49aefdf92e01fb</pre>
+
+              <p>Указываем диапазон поиска. коммит, где ошибка уже есть:</p>
+              <pre>$ git bisect bad 428cdba1fadb27000d5a69e52859784d327bb068</pre>
+
+              <p>Определяем команду для проверки наличия ошибки:</p>
+              <ul>
+                <li> - если код выхода = 0, ошибка отсутствует</li>
+                <li> - если код выхода != 0, ошибка присутствует</li>
+              </ul>
+              <pre>$ git bisect run /bin/bash -c "make build && make install && make test"</pre>
+
+              <p>Для ручного режима (если не возможно командой понять где сломалось):</p>
+              <pre>$ git bisect next</pre>
+              <p>И проверяем текущую версию и ручками маркируем good/bad через команды</p>
+              <pre>$ git bisect bad # or: git bisect good</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>15. Свой git-сервер. Gogs.</h2>
               <p>Вот и пришло время делать свой гит/джит-сервер: <a target="_blank" href="https://github.com/gogs/">https://github.com/gogs/</a></p>
               <p>Создаем docker-compose.yml:</p>
               <pre>
