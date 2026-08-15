@@ -171,10 +171,11 @@
                 <li><a href="?p=slide10">Слайд 10</a>: Коммиты. Закрепление изменений.</li>
                 <li><a href="?p=slide11">Слайд 11</a>: Стеш. Временное хранилище изменений..</li>
                 <li><a href="?p=slide12">Слайд 12</a>: Крутотеньки. Rebase.</li>
-                <li><a href="?p=slide13">Слайд 13</a>: Крутотеньки. Fixup коммиты.</li>
-                <li><a href="?p=slide14">Слайд 14</a>: Крутотеньки. Bisect.</li>
-                <li><a href="?p=slide15">Слайд 15</a>: Свой git-сервер. Gogs.</li>
-                <li><a href="?p=slide16">Слайд 16</a>: Свой git-сервер. Forgejo.</li>
+                <li><a href="?p=slide13">Слайд 13</a>: Крутотеньки. Merge.</li>
+                <li><a href="?p=slide14">Слайд 14</a>: Крутотеньки. Fixup коммиты.</li>
+                <li><a href="?p=slide15">Слайд 15</a>: Крутотеньки. Bisect.</li>
+                <li><a href="?p=slide16">Слайд 16</a>: Свой git-сервер. Gogs.</li>
+                <li><a href="?p=slide17">Слайд 17</a>: Свой git-сервер. Forgejo.</li>
               </ul>
             </div>
           </div>
@@ -436,7 +437,20 @@ $ chmod 600 ~/.ssh/*
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>13. Крутотеньки. Fixup коммиты.</h2>
+              <h2>13. Крутотеньки. Merge.</h2>
+              <p>Покажит общий коммит между двумя ветками</p>
+              <pre>$ git merge-base origin/master origin/my_branch</pre>
+              <hr/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lecture-slide">
+        <div class="lecture-main-table">
+          <div class="lecture-main-table-row">
+            <div class="lecture-main-table-cell">
+              <h2>14. Крутотеньки. Fixup коммиты.</h2>
               <p>Удобно для персональных веток (!!!) или еще не запушенных коммитов:</p>
               <pre>
 $ git add some_file
@@ -453,7 +467,7 @@ $ git rebase -i --autosquash 7da9c4f09995bb0f02bd77e125fd5d50c5039a1b~1
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>14. Крутотеньки. Bisect.</h2>
+              <h2>15. Крутотеньки. Bisect.</h2>
               <p>Операция: найти коммит в котром есть баг в N последних коммитах</p>
 
               <p>Чтобы не просматривать все коммиты вручную, можно использовать команду git bisect (https://git-scm.com/docs/git-bisect). Она позволяет автоматически найти коммит, где появилась ошибка, с помощью бинарного поиска</p>
@@ -487,7 +501,7 @@ $ git rebase -i --autosquash 7da9c4f09995bb0f02bd77e125fd5d50c5039a1b~1
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>15. Свой git-сервер. Gogs.</h2>
+              <h2>16. Свой git-сервер. Gogs.</h2>
               <p>Вот и пришло время делать свой гит/джит-сервер: <a target="_blank" href="https://github.com/gogs/">https://github.com/gogs/</a></p>
               <p>Создаем docker-compose.yml:</p>
               <pre>
@@ -519,7 +533,7 @@ networks:
         <div class="lecture-main-table">
           <div class="lecture-main-table-row">
             <div class="lecture-main-table-cell">
-              <h2>Свой git-сервер. Forgejo.</h2>
+              <h2>17. Свой git-сервер. Forgejo.</h2>
               <p>Вот тут оффициальный ман для установки и настройки: https://forgejo.org/docs/latest/admin/installation/docker/</p>
               <p>Платформа Forgejo является форком проекта Gitea, который в свою очередь ответвился от платформы Gogs. Ключевыми особенностями Forgejo является низкое потребление ресурсов (может использоваться в дешёвых VPS) и простой процесс установки. Предоставляются типовые возможности работы с проектами, такие как управление задачами, отслеживание проблем (issues), pull-запросы, wiki, средства для координации групп разработчиков, подготовка релизов, автоматизация размещения пакетов в репозиториях.</p>
               <p>Создаем docker-compose.yml (взято с офф примера):</p>
